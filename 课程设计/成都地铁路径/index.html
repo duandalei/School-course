@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="成都地铁查询系统 - 提供线路查询、站点查询和最短路径规划功能">
+    <meta name="keywords" content="成都地铁,地铁查询,路径规划,最短路径">
+    <meta name="author" content="成都地铁查询系统">
+    <title>成都地铁查询系统 - 便捷查询，智慧出行</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚇 成都地铁查询系统</h1>
+            <p>便捷查询，智慧出行</p>
+        </header>
+
+        <nav class="tabs" role="tablist" aria-label="功能导航">
+            <button class="tab-btn active" data-tab="line" role="tab" aria-selected="true" aria-controls="line-tab">线路查询</button>
+            <button class="tab-btn" data-tab="station" role="tab" aria-selected="false" aria-controls="station-tab">站点查询</button>
+            <button class="tab-btn" data-tab="path" role="tab" aria-selected="false" aria-controls="path-tab">路径规划</button>
+        </nav>
+
+        <!-- 线路查询 -->
+        <section id="line-tab" class="tab-content active" role="tabpanel" aria-labelledby="line-tab">
+            <div class="search-box">
+                <label for="line-select">选择线路：</label>
+                <select id="line-select" aria-label="选择要查询的地铁线路"></select>
+                <button id="query-line-btn" class="btn-primary" aria-label="查询线路站点">查询</button>
+            </div>
+            <div id="line-result" class="result-box" role="region" aria-live="polite" aria-label="查询结果"></div>
+        </section>
+
+        <!-- 站点查询 -->
+        <section id="station-tab" class="tab-content" role="tabpanel" aria-labelledby="station-tab">
+            <div class="search-box">
+                <label for="station-input">输入站点：</label>
+                <input type="text" id="station-input" placeholder="请输入站点名称" aria-label="输入要查询的站点名称" autocomplete="off">
+                <button id="query-station-btn" class="btn-primary" aria-label="查询站点所属线路">查询</button>
+            </div>
+            <div id="station-result" class="result-box" role="region" aria-live="polite" aria-label="查询结果"></div>
+        </section>
+
+        <!-- 路径规划 -->
+        <section id="path-tab" class="tab-content" role="tabpanel" aria-labelledby="path-tab">
+            <div class="search-box path-search">
+                <div class="input-group">
+                    <label for="start-station">起点：</label>
+                    <input type="text" id="start-station" placeholder="请输入起点站" aria-label="输入起点站点" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="end-station">终点：</label>
+                    <input type="text" id="end-station" placeholder="请输入终点站" aria-label="输入终点站点" autocomplete="off">
+                </div>
+                <button id="query-path-btn" class="btn-primary" aria-label="规划路线">规划路线</button>
+            </div>
+            <div id="path-result" class="result-box path-result" role="region" aria-live="polite" aria-label="路径规划结果"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
